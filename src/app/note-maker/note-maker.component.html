@@ -1,0 +1,26 @@
+<div [ngClass]="{'mainNoteContainer': true, 'mat-elevation-z4': true}" >
+  <div [ngClass]="{'noteMainHeaderContainer': true, 'mat-elevation-z2': true}">
+    <div [ngClass]="{'noteMainHeader': true}">Note Easy <mat-icon>assignment_turned_in</mat-icon></div>
+    <div [ngClass]="{'noteMainTagline': true}">A simple note taking application for anyone. Salesforce Integrated.</div>
+</div>
+  <div [ngClass]="{'newNoteButton': true}">
+      <button mat-raised-button color="primary" (click)="openDialog()">New Note</button>
+  </div>
+
+  <!-- <button mat-raised-button color="primary" (click)="showSessionId()">Show Access Token</button>
+  <br><br><br>
+  <button mat-raised-button color="primary" (click)="queryNotes()">Fetch Notes</button> -->
+  <div [ngStyle]="{'text-align': 'center'}">Here are your notes. Scroll & Click on the <strong>Edit</strong> button to change them.</div>
+  <div [ngClass]="{'notesList': true}">
+    <!-- <div [ngStyle]="{'text-align': 'center'}">Here are you notes. Click on the <strong>Edit</strong> button to change them.</div> -->
+    <div *ngFor="let note of listOfNotes" [ngClass]="{'noteCard': true, 'mat-elevation-z4': true}">
+      <div>
+        <div [ngClass]="{'noteHeading': true}">{{note.Name}}</div>
+        <button [ngClass]="{'noteEditButton': true}" mat-raised-button (click)="editDialog(note)">Edit</button>
+      </div>
+      <div [ngClass]="{'noteDescription': true}">{{note.Description__c}}</div>
+      <br>
+      <div [ngClass]="{'noteContact': true}">Contact them @ <strong>{{note.Email__c}}</strong></div>
+    </div>
+  </div>
+</div>

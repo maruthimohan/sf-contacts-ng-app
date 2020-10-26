@@ -1,0 +1,16 @@
+:host {
+   font-family: 'roboto'
+}
+.loginContainer {
+  height: 300px;
+  width: 300px;
+  margin: 50px auto;
+  padding: 5px;
+}
+
+.loginText {
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  align-self: center;
+}

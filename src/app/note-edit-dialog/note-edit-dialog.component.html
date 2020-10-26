@@ -1,0 +1,31 @@
+<div [ngClass]="{'noteEditContainer': true}">
+  <h1 mat-dialog-title [ngStyle]="{'color': '#3f51b5'}">New Note <mat-icon>edit</mat-icon></h1>
+  <form>
+    <div mat-dialog-content>
+      <mat-form-field [ngStyle]="{'width': '400px'}">
+        <input matInput placeholder="Note Header" [(ngModel)]="note.Name" name="name">
+      </mat-form-field>
+      <mat-form-field [ngStyle]="{'width': '400px'}">
+        <textarea matInput placeholder="Note Description" [(ngModel)]="note.Description__c" name="Description"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-form-field" [ngStyle]="{'width': '400px'}">
+        <input matInput type="text" placeholder="Email" [(ngModel)]="note.Email__c" name="Email">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Priority</mat-label>
+        <mat-select [(value)]="note.Priority__c"> <!-- [(value)]="selected"-->
+          <mat-option value="None">None</mat-option>
+          <mat-option value="Low">Low</mat-option>
+          <mat-option value="High">High</mat-option>
+        </mat-select>
+      </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <mat-checkbox [(ngModel)]="note.Remind_Later__c" name="remindLater">Remind Later?</mat-checkbox>
+    </div>
+    <div [ngStyle]="{'width': '400px', 'margin-top':'15px'}">
+      <button mat-raised-button color="primary" (click)="closeDialog()">Nevermind</button>
+      <button mat-raised-button color="primary" [mat-dialog-close]="note" [ngStyle]="{'float': 'right'}" cdkFocusInitial>Note Down</button>
+    </div>
+  </form>
+</div>

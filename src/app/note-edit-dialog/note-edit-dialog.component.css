@@ -1,0 +1,8 @@
+:host {
+  font-family: Roboto;
+  color: #3f51b5;
+}
+
+.noteEditContainer {
+  width: 450px;
+}
